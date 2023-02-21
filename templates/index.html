@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Онлайн магазин</title>
+{% endblock %}
+
+{% block body %}
+<div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+      <h1 class="display-4 fw-normal"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Цены</font></font></h1>
+      <p class="fs-5 text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Быстро создайте эффективную таблицу цен для ваших потенциальных клиентов с помощью этого примера Bootstrap. </font><font style="vertical-align: inherit;">Он построен с использованием компонентов и утилит Bootstrap по умолчанию с небольшой настройкой.</font></font></p>
+    </div>
+   <div class="container">
+     <div class="card-beck mb-3 text-center"> </div>
+     {% for element in data %}
+
+     <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{ element.title }}</font></font></h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{ element.price }}</font></font><small class="text-muted fw-light"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">в месяц</font></font></small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">10 пользователей включены</font></font></li>
+              <li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2 ГБ памяти</font></font></li>
+              <li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Поддержка по электронной почте</font></font></li>
+              <li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Доступ к справочному центру</font></font></li>
+            </ul>
+            <a href="/buy/{{ element.id }}" class="w-100 btn btn-lg btn-outline-primary"></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Купить товар</font></font></button></div>
+        </div>
+     {% endfor %}
+      </div>
+{% endblock %}
